@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: col,
       appBar: AppBar(
         title: Text(
           "Jai Shri Krishna",
@@ -67,7 +68,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Center(
+      body: 
+      Center(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
