@@ -35,15 +35,21 @@ class _HomePageState extends State<HomePage> {
 
   void increaseValue() {
     setState(() {
-      col = Colors.yellow;
       _counter++;
+      if(_counter == 0)
+        col = Colors.white;
+      else
+        col = Colors.yellow;
     });
   }
 
   void decreaseValue() {
     setState(() {
-      col = Colors.amberAccent;
-      _counter--;
+       _counter--;
+      if(_counter == 0)
+        col = Colors.white;
+      else
+       col = Colors.amberAccent;
     });
   }
 
@@ -56,14 +62,22 @@ class _HomePageState extends State<HomePage> {
 
   void plusOneHundred() {
     setState(() {
-      col = Colors.yellow;
       _counter += 100;
+      if(_counter == 0)
+        col = Colors.white;
+      else
+        col = Colors.yellow;
+      
     });
   }
     void minusOneHundred() {
     setState(() {
-      col = Colors.amberAccent;
       _counter -= 100;
+      if(_counter == 0)
+        col = Colors.white;
+      else
+        col = Colors.amberAccent;
+      
     });
   }
 
