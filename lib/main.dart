@@ -54,6 +54,19 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void plusOneHundred() {
+    setState(() {
+      col = Colors.yellow;
+      _counter += 100;
+    });
+  }
+    void minusOneHundred() {
+    setState(() {
+      col = Colors.amberAccent;
+      _counter -= 100;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,13 +81,12 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: 
-      Center(
+      body: Center(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.fromLTRB(0,180,0,70),
+              padding: const EdgeInsets.fromLTRB(0, 180, 0, 70),
               child: Text(
                 "$_counter",
                 style: TextStyle(
@@ -91,9 +103,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(18.0),
                   child: FloatingActionButton(
                     onPressed: increaseValue,
-                    child: Icon(
-                      Icons.add
-                    ),
+                    child: Icon(Icons.add),
                   ),
                 ),
                 Padding(
@@ -111,6 +121,55 @@ class _HomePageState extends State<HomePage> {
                     onPressed: resetValue,
                     child: Icon(
                       Icons.refresh,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: RaisedButton(
+                    shape: StadiumBorder(),
+                    color: Colors.redAccent,
+                    onPressed: plusOneHundred,
+                    padding: EdgeInsets.only(top: 14.0,bottom: 14.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.add,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "100",
+                            style: TextStyle(fontSize: 20.56,color: Colors.white),
+                          ),
+                        ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: RaisedButton(
+                    shape: StadiumBorder(),
+                    color: Colors.grey,
+                    onPressed: minusOneHundred,
+                    padding: EdgeInsets.only(top: 14.0,bottom: 14.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.remove,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "100",
+                            style: TextStyle(fontSize: 20.56,color: Colors.white),
+                          ),
+                        ],
                     ),
                   ),
                 ),
